@@ -24,7 +24,7 @@ namespace Proje_Hastane
             FrmHastaGiris.Show();
 
         }
-
+        //Kayıt bilgileri güncelleme
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("insert into Tbl_Hastalar(HastaAd, HastaSoyad, HastaTC, HastaTelefon, HastaSifre, HastaCinsiyet) " +

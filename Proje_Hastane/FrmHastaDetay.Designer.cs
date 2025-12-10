@@ -34,6 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRandevuId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lnkBilgiDuzenle = new System.Windows.Forms.LinkLabel();
             this.btnRandevuAl = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.dataGridRandevuGecmisi = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridAktifRandevular = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtRandevuId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +75,7 @@
             this.lblTc.Name = "lblTc";
             this.lblTc.Size = new System.Drawing.Size(77, 16);
             this.lblTc.TabIndex = 4;
-            this.lblTc.Text = "0000000000";
+            this.lblTc.Text = "00000000000";
             // 
             // lblAdSoyad
             // 
@@ -124,6 +124,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Randevu Paneli";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // txtRandevuId
+            // 
+            this.txtRandevuId.Location = new System.Drawing.Point(113, 47);
+            this.txtRandevuId.Name = "txtRandevuId";
+            this.txtRandevuId.Size = new System.Drawing.Size(167, 22);
+            this.txtRandevuId.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "ID:";
             // 
             // lnkBilgiDuzenle
             // 
@@ -242,22 +258,6 @@
             this.dataGridAktifRandevular.Size = new System.Drawing.Size(630, 244);
             this.dataGridAktifRandevular.TabIndex = 0;
             this.dataGridAktifRandevular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAktifRandevular_CellContentClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "ID:";
-            // 
-            // txtRandevuId
-            // 
-            this.txtRandevuId.Location = new System.Drawing.Point(113, 47);
-            this.txtRandevuId.Name = "txtRandevuId";
-            this.txtRandevuId.Size = new System.Drawing.Size(167, 22);
-            this.txtRandevuId.TabIndex = 7;
             // 
             // FrmHastaDetay
             // 

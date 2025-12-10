@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Proje_Hastane
 {
     public partial class FrmSekreterGiris : Form
     {
+        
+        sqlBaglantisi conn = new sqlBaglantisi(); // sqlBaglantisi sınıfındaki sql bağlantı otomatik kullanılır.
         public FrmSekreterGiris()
         {
             InitializeComponent();
@@ -23,6 +19,28 @@ namespace Proje_Hastane
             var Form1 = new Form1();
             Form1.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Select * From Tbl_Sekreter Where SekreterTC=@p1 and SekreterSifre=@p2", conn.baglanti());
+            komut.Parameters.AddWithValue("@p1", tctxt.Text);
+            komut.Parameters.AddWithValue("@p2", sifretxt.Text);
+
+            SqlDataReader dr = komut.ExecuteReader();
+            if (dr.Read())
+            {
+                FrmSekreterDetay frm = new FrmSekreterDetay();
+                
+                frm.Show();
+                this.Hide();
+                
+            }
+            else 
+            {
+                MessageBox.Show("Hatalı TC veya Şifre!");
+            }
+            conn.baglanti().Close();
         }
     }
 }

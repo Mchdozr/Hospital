@@ -18,7 +18,7 @@ namespace Proje_Hastane
         {
             //Ad Soyad Çekme
             lblTc.Text = tc;
-                                                 //Tbl_Hastalar tablosundan HastaAd,HastaSoyad seçildi, HastaTc'si @p1 olan ile eşlendi
+                                                 //Tbl_Hastalar tablosundan HastaAd,HastaSoyad seçildi, HastaTc'si @p1 olan ile
             SqlCommand komut = new SqlCommand("Select HastaAd,HastaSoyad From Tbl_Hastalar Where HastaTC=@p1",conn.baglanti());
             komut.Parameters.AddWithValue("@p1", lblTc.Text);
             SqlDataReader dr = komut.ExecuteReader();
@@ -33,7 +33,7 @@ namespace Proje_Hastane
 
             //Randevu Geçmişi
             DataTable dt = new DataTable();
-            SqlDataAdapter da= new SqlDataAdapter("Select * From Tbl_Randevular where HastaTC ="+ tc, conn.baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Randevular where HastaTC =" + tc, conn.baglanti());
             da.Fill(dt);
             dataGridRandevuGecmisi.DataSource = dt;
 
@@ -54,6 +54,7 @@ namespace Proje_Hastane
             {
                 cmbodoktor.Items.Add(dr3[0]);           
             }
+
         }
 
         private void lblAdSoyad_Click(object sender, EventArgs e)

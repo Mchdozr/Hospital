@@ -11,9 +11,9 @@ namespace Proje_Hastane
             InitializeComponent();
         }
         sqlBaglantisi conn = new sqlBaglantisi(); // sql sınıfındaki bağlantıyı kullanmak için
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // Hasta giriş bilgileri kontrol
         {
-            SqlCommand komut = new SqlCommand("Select * From Tbl_Hastalar Where HastaTC=@p1 and HastaSifre=@p2", conn.baglanti());
+            SqlCommand komut = new SqlCommand("Select * Form Tbl_Hastalar Where HastaTC=@p1 and HastaSifre=@p2", conn.baglanti());
             komut.Parameters.AddWithValue("@p1", mskTC.Text);
             komut.Parameters.AddWithValue("@p2", mskSifre.Text);
             SqlDataReader dr = komut.ExecuteReader();
@@ -29,11 +29,10 @@ namespace Proje_Hastane
                 MessageBox.Show("Hatalı TC veya Şifre");
             }
             conn.baglanti().Close();
-
-
+            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e) // geri butonu
         {
             this.Hide();          // mevcut formu gizle
             var Form1 = new Form1();
@@ -48,10 +47,10 @@ namespace Proje_Hastane
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
             var FrmHastaKayit = new FrmHastaKayit();
             FrmHastaKayit.Show();
-            
+            this.Hide();
+
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
