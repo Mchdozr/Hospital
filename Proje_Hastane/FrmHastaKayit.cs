@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Proje_Hastane
 {
@@ -15,7 +15,7 @@ namespace Proje_Hastane
         {
 
         }
-        sqlBaglantisi conn = new sqlBaglantisi();   
+        sqlBaglantisi conn = new sqlBaglantisi();
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -33,7 +33,7 @@ namespace Proje_Hastane
             komut.Parameters.AddWithValue("@p2", txtSoyad.Text);
             komut.Parameters.AddWithValue("@p3", mskdtxtTc.Text);
             komut.Parameters.AddWithValue("@p4", mskdtxtTel.Text);
-            komut.Parameters.AddWithValue("@p5",txtSifre.Text);
+            komut.Parameters.AddWithValue("@p5", txtSifre.Text);
             komut.Parameters.AddWithValue("@p6", cmbCinsiyet.Text);
             komut.ExecuteNonQuery();
             conn.baglanti().Close();

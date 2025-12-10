@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnKayitOl = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.cmbCinsiyet = new System.Windows.Forms.ComboBox();
+            this.mskTel = new System.Windows.Forms.MaskedTextBox();
+            this.mskTc = new System.Windows.Forms.MaskedTextBox();
+            this.sifretxt = new System.Windows.Forms.TextBox();
+            this.soyadtxt = new System.Windows.Forms.TextBox();
+            this.adTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,64 +43,65 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnKayitOl
+            // btnGuncelle
             // 
-            this.btnKayitOl.BackColor = System.Drawing.Color.Chocolate;
-            this.btnKayitOl.Location = new System.Drawing.Point(315, 503);
-            this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(172, 48);
-            this.btnKayitOl.TabIndex = 27;
-            this.btnKayitOl.Text = "Güncelle";
-            this.btnKayitOl.UseVisualStyleBackColor = false;
+            this.btnGuncelle.BackColor = System.Drawing.Color.Chocolate;
+            this.btnGuncelle.Location = new System.Drawing.Point(315, 503);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(172, 48);
+            this.btnGuncelle.TabIndex = 7;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnKayitOl_Click);
             // 
-            // comboBox1
+            // cmbCinsiyet
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCinsiyet.FormattingEnabled = true;
+            this.cmbCinsiyet.Items.AddRange(new object[] {
             "Erkek",
             "Kadın"});
-            this.comboBox1.Location = new System.Drawing.Point(315, 446);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 44);
-            this.comboBox1.TabIndex = 26;
+            this.cmbCinsiyet.Location = new System.Drawing.Point(315, 446);
+            this.cmbCinsiyet.Name = "cmbCinsiyet";
+            this.cmbCinsiyet.Size = new System.Drawing.Size(172, 44);
+            this.cmbCinsiyet.TabIndex = 6;
             // 
-            // maskedTextBox3
+            // mskTel
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(315, 279);
-            this.maskedTextBox3.Mask = "(999) 000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(172, 43);
-            this.maskedTextBox3.TabIndex = 25;
+            this.mskTel.Location = new System.Drawing.Point(315, 279);
+            this.mskTel.Mask = "(999) 000-0000";
+            this.mskTel.Name = "mskTel";
+            this.mskTel.Size = new System.Drawing.Size(172, 43);
+            this.mskTel.TabIndex = 4;
             // 
-            // maskedTextBox2
+            // mskTc
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(315, 203);
-            this.maskedTextBox2.Mask = "0000000000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(172, 43);
-            this.maskedTextBox2.TabIndex = 24;
-            this.maskedTextBox2.ValidatingType = typeof(int);
+            this.mskTc.Location = new System.Drawing.Point(315, 203);
+            this.mskTc.Mask = "0000000000";
+            this.mskTc.Name = "mskTc";
+            this.mskTc.Size = new System.Drawing.Size(172, 43);
+            this.mskTc.TabIndex = 3;
+            this.mskTc.ValidatingType = typeof(int);
             // 
-            // textBox4
+            // sifretxt
             // 
-            this.textBox4.Location = new System.Drawing.Point(315, 362);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 43);
-            this.textBox4.TabIndex = 23;
+            this.sifretxt.Location = new System.Drawing.Point(315, 362);
+            this.sifretxt.Name = "sifretxt";
+            this.sifretxt.Size = new System.Drawing.Size(172, 43);
+            this.sifretxt.TabIndex = 5;
             // 
-            // textBox2
+            // soyadtxt
             // 
-            this.textBox2.Location = new System.Drawing.Point(315, 125);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 43);
-            this.textBox2.TabIndex = 22;
+            this.soyadtxt.Location = new System.Drawing.Point(315, 125);
+            this.soyadtxt.Name = "soyadtxt";
+            this.soyadtxt.Size = new System.Drawing.Size(172, 43);
+            this.soyadtxt.TabIndex = 2;
             // 
-            // textBox1
+            // adTxt
             // 
-            this.textBox1.Location = new System.Drawing.Point(315, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 43);
-            this.textBox1.TabIndex = 21;
+            this.adTxt.Location = new System.Drawing.Point(315, 51);
+            this.adTxt.Name = "adTxt";
+            this.adTxt.Size = new System.Drawing.Size(172, 43);
+            this.adTxt.TabIndex = 1;
             // 
             // label6
             // 
@@ -159,17 +160,18 @@
             // 
             // FrmBilgiDuzenle
             // 
+            this.AcceptButton = this.btnGuncelle;
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(677, 681);
-            this.Controls.Add(this.btnKayitOl);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnGuncelle);
+            this.Controls.Add(this.cmbCinsiyet);
+            this.Controls.Add(this.mskTel);
+            this.Controls.Add(this.mskTc);
+            this.Controls.Add(this.sifretxt);
+            this.Controls.Add(this.soyadtxt);
+            this.Controls.Add(this.adTxt);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -180,6 +182,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FrmBilgiDuzenle";
             this.Text = "FrmBilgiDuzenle";
+            this.Load += new System.EventHandler(this.FrmBilgiDuzenle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,13 +190,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnKayitOl;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.ComboBox cmbCinsiyet;
+        private System.Windows.Forms.MaskedTextBox mskTel;
+        private System.Windows.Forms.MaskedTextBox mskTc;
+        private System.Windows.Forms.TextBox sifretxt;
+        private System.Windows.Forms.TextBox soyadtxt;
+        private System.Windows.Forms.TextBox adTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

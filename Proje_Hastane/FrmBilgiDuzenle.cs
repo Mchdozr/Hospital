@@ -16,10 +16,20 @@ namespace Proje_Hastane
         {
             InitializeComponent();
         }
-
+        public string TCno;
         private void label4_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnKayitOl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmBilgiDuzenle_Load(object sender, EventArgs e)
+        {
+            mskTc.Text = TCno;
         }
     }
 }

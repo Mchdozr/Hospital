@@ -33,8 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mskTC = new System.Windows.Forms.MaskedTextBox();
+            this.mskSifre = new System.Windows.Forms.MaskedTextBox();
             this.lnkUyeOl = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,21 +80,22 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Şifre:";
             // 
-            // maskedTextBox1
+            // mskTC
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(257, 169);
-            this.maskedTextBox1.Mask = "0000000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(170, 22);
-            this.maskedTextBox1.TabIndex = 6;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.mskTC.Location = new System.Drawing.Point(257, 169);
+            this.mskTC.Mask = "00000000000";
+            this.mskTC.Name = "mskTC";
+            this.mskTC.Size = new System.Drawing.Size(170, 22);
+            this.mskTC.TabIndex = 6;
+            this.mskTC.ValidatingType = typeof(int);
+            this.mskTC.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
-            // maskedTextBox2
+            // mskSifre
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(257, 219);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(170, 22);
-            this.maskedTextBox2.TabIndex = 7;
+            this.mskSifre.Location = new System.Drawing.Point(257, 219);
+            this.mskSifre.Name = "mskSifre";
+            this.mskSifre.Size = new System.Drawing.Size(170, 22);
+            this.mskSifre.TabIndex = 7;
             // 
             // lnkUyeOl
             // 
@@ -126,8 +127,8 @@
             this.ClientSize = new System.Drawing.Size(584, 385);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lnkUyeOl);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mskSifre);
+            this.Controls.Add(this.mskTC);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -147,8 +148,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mskTC;
+        private System.Windows.Forms.MaskedTextBox mskSifre;
         private System.Windows.Forms.LinkLabel lnkUyeOl;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
