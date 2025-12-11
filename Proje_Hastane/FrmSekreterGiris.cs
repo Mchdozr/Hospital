@@ -24,15 +24,15 @@ namespace Proje_Hastane
         private void button1_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("Select * From Tbl_Sekreter Where SekreterTC=@p1 and SekreterSifre=@p2", conn.baglanti());
-            komut.Parameters.AddWithValue("@p1", tctxt.Text);
+            komut.Parameters.AddWithValue("@p1", mskTc.Text);
             komut.Parameters.AddWithValue("@p2", sifretxt.Text);
-
             SqlDataReader dr = komut.ExecuteReader();
             if (dr.Read())
             {
-                FrmSekreterDetay frm = new FrmSekreterDetay();
-                
-                frm.Show();
+                FrmSekreterDetay frs = new FrmSekreterDetay();
+                frs.tc = mskTc.Text;
+                frs.sifre = sifretxt.Text;
+                frs.Show();
                 this.Hide();
                 
             }

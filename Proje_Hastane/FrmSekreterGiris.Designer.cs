@@ -32,10 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tctxt = new System.Windows.Forms.TextBox();
             this.sifretxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mskTc = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(59, 249);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 36);
+            this.label2.Size = new System.Drawing.Size(150, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "TC Kimlik No:";
             // 
@@ -63,30 +63,24 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(161, 336);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 36);
+            this.label3.Size = new System.Drawing.Size(66, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Şifre:";
-            // 
-            // tctxt
-            // 
-            this.tctxt.Location = new System.Drawing.Point(319, 245);
-            this.tctxt.Name = "tctxt";
-            this.tctxt.Size = new System.Drawing.Size(260, 45);
-            this.tctxt.TabIndex = 3;
             // 
             // sifretxt
             // 
             this.sifretxt.Location = new System.Drawing.Point(319, 333);
             this.sifretxt.Name = "sifretxt";
-            this.sifretxt.Size = new System.Drawing.Size(260, 45);
-            this.sifretxt.TabIndex = 4;
+            this.sifretxt.Size = new System.Drawing.Size(260, 36);
+            this.sifretxt.TabIndex = 2;
+            this.sifretxt.UseSystemPasswordChar = true;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(341, 418);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 53);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Giriş";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -102,17 +96,26 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // mskTc
+            // 
+            this.mskTc.Location = new System.Drawing.Point(319, 242);
+            this.mskTc.Mask = "00000000000";
+            this.mskTc.Name = "mskTc";
+            this.mskTc.Size = new System.Drawing.Size(260, 36);
+            this.mskTc.TabIndex = 1;
+            // 
             // FrmSekreterGiris
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(789, 520);
+            this.Controls.Add(this.mskTc);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.sifretxt);
-            this.Controls.Add(this.tctxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,9 +134,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tctxt;
         private System.Windows.Forms.TextBox sifretxt;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox mskTc;
     }
 }

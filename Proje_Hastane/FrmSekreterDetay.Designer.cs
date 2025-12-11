@@ -31,6 +31,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAdSoyad = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblSifre = new System.Windows.Forms.Label();
             this.lblTc = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -62,8 +64,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.lblAdSoyad = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,6 +108,24 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sekreter Bilgi";
+            // 
+            // lblAdSoyad
+            // 
+            this.lblAdSoyad.AutoSize = true;
+            this.lblAdSoyad.Location = new System.Drawing.Point(183, 100);
+            this.lblAdSoyad.Name = "lblAdSoyad";
+            this.lblAdSoyad.Size = new System.Drawing.Size(78, 28);
+            this.lblAdSoyad.TabIndex = 8;
+            this.lblAdSoyad.Text = "______";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(57, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 28);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ad Soyad:";
             // 
             // lblSifre
             // 
@@ -342,6 +360,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 32);
@@ -363,6 +382,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 32);
@@ -410,24 +430,6 @@
             this.button4.TabIndex = 17;
             this.button4.Text = "Doktor Paneli";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // lblAdSoyad
-            // 
-            this.lblAdSoyad.AutoSize = true;
-            this.lblAdSoyad.Location = new System.Drawing.Point(183, 100);
-            this.lblAdSoyad.Name = "lblAdSoyad";
-            this.lblAdSoyad.Size = new System.Drawing.Size(78, 28);
-            this.lblAdSoyad.TabIndex = 8;
-            this.lblAdSoyad.Text = "______";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 28);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Ad Soyad:";
             // 
             // FrmSekreterDetay
             // 
