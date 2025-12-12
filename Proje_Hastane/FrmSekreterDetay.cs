@@ -43,34 +43,89 @@ namespace Proje_Hastane
             SqlDataAdapter da2 = new SqlDataAdapter("Select (DoktorAd +' '+ DoktorSoyad) as Doktorlar ,DoktorBrans From Tbl_Doktorlar", conn.baglanti());
             da2.Fill(dt2);
             dataGridView2.DataSource = dt2;
+
+            //Branşı Combobox'a aktarma
+
+            SqlCommand cmd2 = new SqlCommand("select BransAd From Tbl_Branslar", conn.baglanti());
+            SqlDataReader dr2 = cmd2.ExecuteReader();
+            while (dr2.Read()) 
+            {
+                cmbBrans.Items.Add(dr2[0]);
+            }
+            conn.baglanti().Close();
         }
 
+        //Randevu Oluşturma
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("insert into Tbl_Randevular (RandevuTarih,RandevuSaat,RandevuBrans,RandevuDoktor) values (@r1,@r2,@r3,@r4)", conn.baglanti());
+            cmd.Parameters.AddWithValue("@r1", mskdTarih.Text);
+            cmd.Parameters.AddWithValue("@r2", mskdsaat.Text);
+            cmd.Parameters.AddWithValue("@r3", cmbBrans.Text);
+            cmd.Parameters.AddWithValue("@r4", cmbDoktor.Text);
+            cmd.ExecuteNonQuery();
+            conn.baglanti().Close();
+            MessageBox.Show("Randevu Oluşturuldu!");
+        }
+        //Seçilen Branşa Göre Doktor Getirme
+        private void cmbBrans_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDoktor.Items.Clear();
+
+            SqlCommand cmd = new SqlCommand("Select DoktorAd,DoktorSoyad From Tbl_Doktorlar Where DoktorBrans=@p1", conn.baglanti());
+            cmd.Parameters.AddWithValue("@p1", cmbBrans.Text);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cmbDoktor.Items.Add(dr[0] + " " + dr[1]);
+            }
+            conn.baglanti().Close();
+        }
         private void lblSifre_Click(object sender, EventArgs e)
         {
 
         }
-
         private void lblTc_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //db'e duyuru gönderiliyor
+            SqlCommand cmnd = new SqlCommand("Insert into Tbl_Duyurular (duyuru) values (@d1)",conn.baglanti());
+            cmnd.Parameters.AddWithValue("@d1", rchDuyuru.Text);
+            cmnd.ExecuteNonQuery();
+            conn.baglanti().Close();
+            MessageBox.Show("Duyuru Oluşturuldu!");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmDoktorPanel frm = new FrmDoktorPanel();
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
 
         }
@@ -79,6 +134,6 @@ namespace Proje_Hastane
         {
 
         }
-
     }
 }
+

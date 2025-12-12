@@ -13,7 +13,7 @@ namespace Proje_Hastane
         sqlBaglantisi conn = new sqlBaglantisi(); // sql sınıfındaki bağlantıyı kullanmak için
         private void button1_Click(object sender, EventArgs e) // Hasta giriş bilgileri kontrol
         {
-            SqlCommand komut = new SqlCommand("Select * Form Tbl_Hastalar Where HastaTC=@p1 and HastaSifre=@p2", conn.baglanti());
+            SqlCommand komut = new SqlCommand("Select * From Tbl_Hastalar Where HastaTC=@p1 and HastaSifre=@p2", conn.baglanti());
             komut.Parameters.AddWithValue("@p1", mskTC.Text);
             komut.Parameters.AddWithValue("@p2", mskSifre.Text);
             SqlDataReader dr = komut.ExecuteReader();
