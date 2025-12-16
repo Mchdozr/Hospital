@@ -13,6 +13,7 @@ namespace Proje_Hastane
             InitializeComponent();
         }
 
+        #region Geri Dönüş
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -20,7 +21,9 @@ namespace Proje_Hastane
             Form1.Show();
             this.Close();
         }
+        #endregion
 
+        #region Sekreter Giriş Kontrolü
         private void button1_Click(object sender, EventArgs e)
         {
             SqlCommand komut = new SqlCommand("Select * From Tbl_Sekreter Where SekreterTC=@p1 and SekreterSifre=@p2", conn.baglanti());
@@ -42,5 +45,6 @@ namespace Proje_Hastane
             }
             conn.baglanti().Close();
         }
+        #endregion
     }
 }

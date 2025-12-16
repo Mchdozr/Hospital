@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBrans = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDoktorPanel));
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -42,15 +42,11 @@
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtBrans = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtBrans
-            // 
-            this.txtBrans.Location = new System.Drawing.Point(119, 139);
-            this.txtBrans.Name = "txtBrans";
-            this.txtBrans.Size = new System.Drawing.Size(176, 36);
-            this.txtBrans.TabIndex = 18;
             // 
             // txtSoyad
             // 
@@ -145,6 +141,7 @@
             this.btnSil.TabIndex = 24;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = false;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -155,6 +152,7 @@
             this.btnGuncelle.TabIndex = 25;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // dataGridView1
             // 
@@ -163,9 +161,28 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1032, 346);
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 346);
             this.dataGridView1.TabIndex = 26;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // txtBrans
+            // 
+            this.txtBrans.FormattingEnabled = true;
+            this.txtBrans.Location = new System.Drawing.Point(119, 139);
+            this.txtBrans.Name = "txtBrans";
+            this.txtBrans.Size = new System.Drawing.Size(176, 36);
+            this.txtBrans.TabIndex = 27;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 46);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmDoktorPanel
             // 
@@ -173,6 +190,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1391, 413);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtBrans);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnSil);
@@ -181,7 +200,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTC);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtBrans);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label11);
@@ -193,14 +211,13 @@
             this.Text = "FrmDoktorPanel";
             this.Load += new System.EventHandler(this.FrmDoktorPanel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtBrans;
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label label11;
@@ -214,5 +231,7 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox txtBrans;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

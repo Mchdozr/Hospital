@@ -138,7 +138,7 @@
             this.Controls.Add(this.btnDoktorGirisi);
             this.Controls.Add(this.btnHastaGirisi);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Giriş Ekranı";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

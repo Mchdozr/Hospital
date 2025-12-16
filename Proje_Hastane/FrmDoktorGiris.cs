@@ -18,13 +18,17 @@ namespace Proje_Hastane
             InitializeComponent();
         }
         sqlBaglantisi conn = new sqlBaglantisi();
+
+        #region Geri Dönüş
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
             var Form1 = new Form1();
             Form1.Show();
         }
+        #endregion
 
+        #region Doktor Giriş Kontrolü
         private void button1_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand("Select * from Tbl_Doktorlar Where DoktorTC=@p1 and DoktorSifre=@p2",conn.baglanti()); // Where 'den sonra virgül ile ayırma hata alırsın. AND kullan.
@@ -43,5 +47,6 @@ namespace Proje_Hastane
             }
             conn.baglanti().Close();
         }
+        #endregion
     }
 }

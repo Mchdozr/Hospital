@@ -25,6 +25,7 @@ namespace Proje_Hastane
             
         }
 
+        #region Hasta Bilgilerini Güncelleme
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
             SqlCommand cmnd = new SqlCommand("update Tbl_Hastalar set HastaAd=@p1,HastaSoyad=@p2,HastaTelefon=@p3,HastaSifre=@p4,HastaCinsiyet=@p5 where HastaTc=@p6",conn.baglanti());
@@ -57,6 +58,7 @@ namespace Proje_Hastane
             conn.baglanti().Close();
             
         }
+        #endregion
 
         private void label5_Click(object sender, EventArgs e)
         {

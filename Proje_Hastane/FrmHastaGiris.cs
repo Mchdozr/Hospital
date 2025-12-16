@@ -11,6 +11,8 @@ namespace Proje_Hastane
             InitializeComponent();
         }
         sqlBaglantisi conn = new sqlBaglantisi(); // sql sınıfındaki bağlantıyı kullanmak için
+
+        #region Hasta Giriş Kontrolü
         private void button1_Click(object sender, EventArgs e) // Hasta giriş bilgileri kontrol
         {
             SqlCommand komut = new SqlCommand("Select * From Tbl_Hastalar Where HastaTC=@p1 and HastaSifre=@p2", conn.baglanti());
@@ -32,7 +34,9 @@ namespace Proje_Hastane
             conn.baglanti().Close();
             
         }
+        #endregion
 
+        #region Navigasyon (Geri / Kayıt Ol)
         private void pictureBox1_Click(object sender, EventArgs e) // geri butonu
         {
             this.Hide();          // mevcut formu gizle
@@ -53,6 +57,7 @@ namespace Proje_Hastane
             this.Hide();
 
         }
+        #endregion
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {

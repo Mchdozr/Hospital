@@ -13,10 +13,11 @@ namespace Proje_Hastane
 
         private void FrmHastaKayit_Load(object sender, EventArgs e)
         {
-
+       
         }
         sqlBaglantisi conn = new sqlBaglantisi();
 
+        #region Navigasyon (Geri Dönüş)
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -24,6 +25,9 @@ namespace Proje_Hastane
             FrmHastaGiris.Show();
 
         }
+        #endregion
+
+        #region Hasta Kayıt Oluşturma
         //Kayıt bilgileri güncelleme
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
@@ -39,6 +43,7 @@ namespace Proje_Hastane
             conn.baglanti().Close();
             MessageBox.Show("Kaydınız gerçekleşmiştir! \nŞifreniz : " + txtSifre.Text);
         }
+        #endregion
 
         private void mskdtxtTc_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {

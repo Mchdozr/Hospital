@@ -13,12 +13,13 @@ namespace Proje_Hastane
             InitializeComponent();
         }
 
-        public string tc,sifre;
+        public string tc, sifre;
 
+        #region Form Load ve Sekreter Bilgileri
         private void FrmSekreterDetay_Load(object sender, EventArgs e)
         {
-           lblTc.Text = tc;
-           lblSifre.Text = sifre;
+            lblTc.Text = tc;
+            lblSifre.Text = sifre;
 
             //Ad Soyad Çekme
             SqlCommand cmd = new SqlCommand("Select SekreterAdSoyad From Tbl_Sekreter Where SekreterTC=@p1", conn.baglanti());
@@ -48,13 +49,15 @@ namespace Proje_Hastane
 
             SqlCommand cmd2 = new SqlCommand("select BransAd From Tbl_Branslar", conn.baglanti());
             SqlDataReader dr2 = cmd2.ExecuteReader();
-            while (dr2.Read()) 
+            while (dr2.Read())
             {
                 cmbBrans.Items.Add(dr2[0]);
             }
             conn.baglanti().Close();
         }
+        #endregion
 
+        #region Randevu Oluşturma
         //Randevu Oluşturma
         private void button2_Click(object sender, EventArgs e)
         {
@@ -67,7 +70,9 @@ namespace Proje_Hastane
             conn.baglanti().Close();
             MessageBox.Show("Randevu Oluşturuldu!");
         }
-        //Seçilen Branşa Göre Doktor Getirme
+        #endregion
+
+        #region Seçilen Branşa Göre Doktor Getirme
         private void cmbBrans_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbDoktor.Items.Clear();
@@ -81,6 +86,23 @@ namespace Proje_Hastane
             }
             conn.baglanti().Close();
         }
+        #endregion
+
+        #region Duyuru Oluşturma
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //db'e duyuru gönderiliyor
+            SqlCommand cmnd = new SqlCommand("Insert into Tbl_Duyurular (duyuru) values (@d1)", conn.baglanti());
+            cmnd.Parameters.AddWithValue("@d1", rchDuyuru.Text);
+            cmnd.ExecuteNonQuery();
+            conn.baglanti().Close();
+            MessageBox.Show("Duyuru Oluşturuldu!");
+
+
+        }
+        #endregion
+
+
         private void lblSifre_Click(object sender, EventArgs e)
         {
 
@@ -101,17 +123,6 @@ namespace Proje_Hastane
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //db'e duyuru gönderiliyor
-            SqlCommand cmnd = new SqlCommand("Insert into Tbl_Duyurular (duyuru) values (@d1)",conn.baglanti());
-            cmnd.Parameters.AddWithValue("@d1", rchDuyuru.Text);
-            cmnd.ExecuteNonQuery();
-            conn.baglanti().Close();
-            MessageBox.Show("Duyuru Oluşturuldu!");
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             FrmDoktorPanel frm = new FrmDoktorPanel();
@@ -119,17 +130,16 @@ namespace Proje_Hastane
             this.Hide();
 
         }
-
         private void button5_Click(object sender, EventArgs e)
         {
 
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
-
+            FrmRandevuListesi frm = new FrmRandevuListesi();
+            frm.Show();
+            this.Hide();
         }
-
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
