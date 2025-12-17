@@ -140,6 +140,14 @@ namespace Proje_Hastane
             frm.Show();
             this.Hide();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
+        }
+
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 

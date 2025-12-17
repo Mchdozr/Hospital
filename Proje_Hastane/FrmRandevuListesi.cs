@@ -30,6 +30,8 @@ namespace Proje_Hastane
 
         private void button1_Click(object sender, EventArgs e)
         {
+            HastaRandevuDurumText.Text = "True";
+
             SqlCommand cmd = new SqlCommand("Update Tbl_Randevular set RandevuDurum=@p1,HastaAdSoyad=@p3 Where HastaTC=@p2", conn.baglanti());
             cmd.Parameters.AddWithValue("@p1", HastaRandevuDurumText.Text);
             cmd.Parameters.AddWithValue("@p3", hastaAdSoyadText.Text);
@@ -46,6 +48,24 @@ namespace Proje_Hastane
             hastaTctext.Text = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
             HastaRandevuDurumText.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            HastaRandevuDurumText.Text = "False";
+            SqlCommand cmd = new SqlCommand("Update Tbl_Randevular set RandevuDurum=@p1 Where HastaTC=@p2", conn.baglanti());
+            cmd.Parameters.AddWithValue("@p1", HastaRandevuDurumText.Text);
+            cmd.Parameters.AddWithValue("@p2", hastaTctext.Text);
+            cmd.ExecuteNonQuery();
+            conn.baglanti().Close();
+            MessageBox.Show("Randevu Reddedildi!");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmSekreterDetay frm = new FrmSekreterDetay();
+            frm.Show();
+            this.Hide();
         }
     }
 }

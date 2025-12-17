@@ -93,5 +93,12 @@ namespace Proje_Hastane
             this.Hide();
         }
         #endregion
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FrmSekreterDetay frm = new FrmSekreterDetay();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

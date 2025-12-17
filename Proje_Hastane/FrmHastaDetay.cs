@@ -122,6 +122,18 @@ namespace Proje_Hastane
             MessageBox.Show("Randevu İsteği Gönderildi!");
         }
         #endregion
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void lnkBilgiDuzenle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmBilgiDuzenle fr = new FrmBilgiDuzenle();

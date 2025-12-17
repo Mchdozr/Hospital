@@ -21,5 +21,12 @@ namespace Proje_Hastane
             dataGridView1.DataSource = dt;
             conn.baglanti().Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmDoktorPanel frm = new FrmDoktorPanel();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
