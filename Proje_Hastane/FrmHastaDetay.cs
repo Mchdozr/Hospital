@@ -32,12 +32,18 @@ namespace Proje_Hastane
             conn.baglanti().Close();
 
 
+           
 
-            //Randevu Geçmişi
+            //Aktif Randevular
+
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Randevular where HastaTC =" + tc, conn.baglanti());
+            SqlCommand cmd = new SqlCommand("Select RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor From Tbl_Randevular Where HastaTC=@p1 and RandevuDurum=@p2", conn.baglanti());
+            cmd.Parameters.AddWithValue("@p1", tc);
+            cmd.Parameters.AddWithValue("@p2", "True");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            dataGridRandevuGecmisi.DataSource = dt;
+            dataGridAktifRandevular.DataSource = dt;
+            conn.baglanti().Close();
 
             // Branşları Çekme
             SqlCommand komut2 = new SqlCommand("Select BransAd From Tbl_Branslar", conn.baglanti());
@@ -87,11 +93,15 @@ namespace Proje_Hastane
 
         private void cmbodoktor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //DataGrid'e veri çekme
+            //Aktif Randevular - Sadece onaylanmış randevuları göster
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("Select * From Tbl_Randevular Where RandevuBrans='" + cmboBrans.Text + "'", conn.baglanti());
+            SqlCommand cmd = new SqlCommand("Select RandevuTarih, RandevuSaat, RandevuBrans, RandevuDoktor From Tbl_Randevular Where HastaTC=@p1 and RandevuDurum=@p2", conn.baglanti());
+            cmd.Parameters.AddWithValue("@p1", tc);
+            cmd.Parameters.AddWithValue("@p2", "True");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dataGridAktifRandevular.DataSource = dt;
+            conn.baglanti().Close();
         }
         #endregion
 
@@ -132,6 +142,23 @@ namespace Proje_Hastane
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+        #region Aktif Randevular
+        private void dataGridAktifRandevular_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridAktifRandevular.SelectedCells[0].RowIndex;
+            txtRandevuId.Text =dataGridRandevuGecmisi.Rows[secilen].Cells[0].Value.ToString();
+        }
+        #endregion
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("Select * From Tbl_Randevular Where HastaTC=@p1", conn.baglanti());
+            cmd.Parameters.AddWithValue("@p1", tc);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dataGridRandevuGecmisi.DataSource = dt;
+            conn.baglanti().Close();
         }
 
         private void lnkBilgiDuzenle_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

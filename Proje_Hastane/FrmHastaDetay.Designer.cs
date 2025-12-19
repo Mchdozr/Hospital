@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHastaDetay));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTc = new System.Windows.Forms.Label();
             this.lblAdSoyad = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,8 +56,8 @@
             this.dataGridAktifRandevular = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRandevuGecmisi)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAktifRandevular)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,6 +80,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kişi Bilgi";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblTc
             // 
@@ -179,7 +190,8 @@
             // 
             // txtRandevuId
             // 
-            this.txtRandevuId.Location = new System.Drawing.Point(113, 47);
+            this.txtRandevuId.Enabled = false;
+            this.txtRandevuId.Location = new System.Drawing.Point(112, 47);
             this.txtRandevuId.Name = "txtRandevuId";
             this.txtRandevuId.Size = new System.Drawing.Size(167, 22);
             this.txtRandevuId.TabIndex = 7;
@@ -277,6 +289,7 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Randevu Geçmişi";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dataGridRandevuGecmisi
             // 
@@ -311,6 +324,7 @@
             this.dataGridAktifRandevular.RowTemplate.Height = 24;
             this.dataGridAktifRandevular.Size = new System.Drawing.Size(630, 163);
             this.dataGridAktifRandevular.TabIndex = 0;
+            this.dataGridAktifRandevular.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAktifRandevular_CellClick);
             this.dataGridAktifRandevular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAktifRandevular_CellContentClick);
             // 
             // groupBox5
@@ -335,17 +349,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(630, 147);
             this.dataGridView1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(42, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // FrmHastaDetay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -362,6 +365,7 @@
             this.Load += new System.EventHandler(this.frmHastaDetay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -370,7 +374,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAktifRandevular)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
